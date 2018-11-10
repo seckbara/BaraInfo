@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <!-- Core Stylesheet -->
+    <link href="{{ asset('style.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    {% include "components/_nav.html.twig" %}
+        <div class="featured-post-area">
+        <div class="container">
+            <div class="row">
+                {% block content %}
+                {% endblock %}
+                 <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="#" class="post-catagory">Finance</a>
+                            <div class="post-meta">
+                                <a href="#" class="post-title">
+                                    <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                </a>
+                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="#"><img src="img/bg-img/20.jpg" alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="#" class="post-catagory">Politique</a>
+                            <div class="post-meta">
+                                <a href="#" class="post-title">
+                                    <h6>Sed a elit euismod augue semper congue sit amet ac sapien.</h6>
+                                </a>
+                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="#" class="post-catagory">Economie</a>
+                            <div class="post-meta">
+                                <a href="#" class="post-title">
+                                    <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                </a>
+                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="#"><img src="img/bg-img/22.jpg" alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="#" class="post-catagory">Finance</a>
+                            <div class="post-meta">
+                                <a href="#" class="post-title">
+                                    <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
+                                </a>
+                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="#" class="post-catagory">Sport</a>
+                            <div class="post-meta">
+                                <a href="#" class="post-title">
+                                    <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                </a>
+                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Newlester -->
+                     <div class="newsletter-widget">
+                         <h4>Newsletter</h4>
+                         <p>veuillez saisir votre pour ne pas manquer toute les nouvelles c'est à vous !.</p>
+                         <form action="#" method="post">
+                             <input type="email" name="email" placeholder="Email">
+                             <button type="submit" class="btn btn-success btn-sm">Souscrire</button>
+                         </form>
+                     </div>
+                     <br>
+                     <br>
+                     <!-- end newlester -->
+                </div>
+            </div>
+        </div>
+        </div>
+    {% include "components/_footer.html.twig" %}
+{% endblock %}
+
+{% block javascripts %}
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{ asset('js/jquery/jquery-2.2.4.min.js') }}"></script>
+    <!-- Popper js -->
+    <script src="{{ asset('js/bootstrap/popper.min.js') }}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+    <!-- All Plugins js -->
+    <script src="{{ asset('js/plugins/plugins.js') }}"></script>
+    <!-- Active js -->
+    <script src="{{ asset('js/active.js') }}"></script>
+{% endblock %}
