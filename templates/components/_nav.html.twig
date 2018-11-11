@@ -9,7 +9,7 @@
                     <div class="top-header-content d-flex align-items-center justify-content-between">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                            <a href="{{ path('index_accueil') }}"><img src="{{ asset('img/core-img/logo.png') }}" alt=""></a>
                         </div>
 
                         <!-- Login Search Area -->
@@ -42,7 +42,7 @@
 
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="{{ path('index_accueil') }}"><img src="img/core-img/logo.png" alt=""></a>
                     </div>
 
                     <!-- Navbar Toggler -->
@@ -61,7 +61,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li class="active"><a href="index.html">Accuei</a></li>
+                                <li class="active"><a href="{{ path('index_accueil') }}">Accuei</a></li>
                                 <li><a href="#">Politique</a></li>
                                 <li><a href="#">Economie</a></li>
                                 <li><a href="#">Business</a></li>
@@ -90,13 +90,16 @@
                     </div>
                     <div id="breakingNewsTicker" class="ticker">
                         <ul>
-                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                            <li><a href="#">Welcome to Colorlib Family.</a></li>
-                            <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
+                            {% for article in lastarticles %}
+                                <li><a href="{{ path('index_article', {
+                                        'categorie' : article.categorie.slug,
+                                        'slug' : article.slug,
+                                        'id' : article.id
+                                    }) }}">{{ article.titre }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
-
                 <!-- Breaking News Widget -->
                 <div class="breaking-news-area d-flex align-items-center mt-15">
                     <div class="news-title title2">
@@ -104,9 +107,13 @@
                     </div>
                     <div id="internationalTicker" class="ticker">
                         <ul>
-                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                            <li><a href="#">Welcome to Colorlib Family.</a></li>
-                            <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
+                            {% for articles in lastarticlesinternational %}
+                                <li><a href="{{ path('index_article', {
+                                        'categorie' : articles.categorie.slug,
+                                        'slug' : articles.slug,
+                                        'id' : articles.id
+                                    }) }}">{{ articles.titre }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -115,7 +122,7 @@
             <!-- Hero Add -->
             <div class="col-12 col-lg-4">
                 <div class="hero-add">
-                    <a href="#"><img src="img/bg-img/hero-add.gif" alt=""></a>
+                    <a href="#"><img src="{{ asset('img/bg-img/hero-add.gif') }}" alt=""></a>
                 </div>
             </div>
         </div>

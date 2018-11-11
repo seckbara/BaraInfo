@@ -1,0 +1,27 @@
+<div class="col-12 col-lg-12">
+            <div class="single-blog-post featured-post">
+                <h3>{{ article.titre }}</h3>
+                <p class="post-author">Par <a href="#">{{ article.membre.nom ~ ' ' ~ article.membre.prenom }} </a> - le {{ article.dateCreation | date('d-m-Y')}}</p>
+
+                <div class="post-thumb">
+                    <a href="#"><img src="{{ asset('img/bg-img/'~article.image) }}" alt="{{ article.titre }}"></a>
+                </div>
+                <div class="post-data">
+                    <a href="{{ path('index_article', {
+                        'categorie' : article.categorie.slug,
+                        'slug' : article.slug,
+                        'id' : article.id
+                    }) }}" class="post-catagory">{{ article.categorie.nom }}</a>
+                    <a href="{{ path('index_article', {
+                        'categorie' : article.categorie.slug,
+                        'slug' : article.slug,
+                        'id' : article.id
+                    }) }}" class="post-title">
+                    </a>
+                    <div class="post-meta">
+                        <p class="post-excerp">{{ article.contenu |striptags }}</p>
+                        <!-- Post Like & Post Comment -->
+                    </div>
+                </div>
+            </div>
+</div>
